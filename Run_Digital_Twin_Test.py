@@ -11,7 +11,7 @@ import sys
 import pathlib
 
 # Automatically add the path to the Python Thrift API for the Digital Twin
-script_dir = pathlib.Path(__file__).parent.resolve()
+script_dir = str(pathlib.Path(__file__).parent.resolve())
 sys.path.insert(0, script_dir + '/aliros-ll-thrift-python')
 
 from thrift.transport import TTransport, TSocket, THttpClient

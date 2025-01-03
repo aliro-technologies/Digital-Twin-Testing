@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 
 #Digital Twin requirements####################
 import sys
+import pathlib
 
-# Thrift files not installed as library, this should be updated to 
-# point to the location of the lower layer AlirOS Thrift files
-sys.path.insert(0,'/path/to/alirosllthrift/gen-py')
+# Automatically add the path to the Python Thrift API for the Digital Twin
+script_dir = pathlib.Path(__file__).parent.resolve()
+sys.path.insert(0, script_dir + '/aliros-ll-thrift-python')
 
 from thrift.transport import TTransport, TSocket, THttpClient
 from thrift.protocol.TBinaryProtocol import TBinaryProtocol
